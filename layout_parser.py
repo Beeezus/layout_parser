@@ -110,17 +110,10 @@ class AndroidLayoutParser():
 		return string_element.rstrip()
 
 	def _parse_to_xml(self, string_data):
-		#Not handling parsing with try catch block is intentional
-		#since no other reuqirements are provided I believe it is better
-		#to fail parsing at this stage
 		if isinstance(string_data, str):
 			return ET.fromstring(string_data)
 
 if __name__ == '__main__':
-	#data = ET.parse('string_data.pdf')
-	#Parsing string from multi-page pdf files consistently requires a additional
-	#time for analysis and implementation, hence spoofing string import from xml
-	#for this short ticket
 
 	data = ET.parse('xml_data.xml')
 	tree = data.getroot()
